@@ -185,7 +185,7 @@ blocks:
     coordinate: [8, 229]
     rotation: 0
     state: enabled
-- name: X10_message_generator_0
+- name: X10_message_generator_1
   id: X10_message_generator
   parameters:
     address_code: address_code
@@ -202,9 +202,9 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [456, 180]
+    coordinate: [426, 183]
     rotation: 0
-    state: enabled
+    state: true
 - name: blocks_multiply_const_vxx_0
   id: blocks_multiply_const_vxx
   parameters:
@@ -520,9 +520,9 @@ blocks:
     state: enabled
 
 connections:
-- [X10_message_generator_0, '0', blocks_multiply_const_vxx_0, '0']
+- [X10_message_generator_1, '0', blocks_multiply_const_vxx_0, '0']
 - [blocks_multiply_const_vxx_0, '0', uhd_usrp_sink_0, '0']
-- [blocks_null_source_0, '0', X10_message_generator_0, '0']
+- [blocks_null_source_0, '0', X10_message_generator_1, '0']
 
 metadata:
   file_format: 1

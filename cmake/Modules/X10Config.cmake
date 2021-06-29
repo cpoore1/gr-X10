@@ -22,9 +22,10 @@ FIND_LIBRARY(
           /usr/local/lib64
           /usr/lib
           /usr/lib64
-)
+          )
+
+include("${CMAKE_CURRENT_LIST_DIR}/X10Target.cmake")
 
 INCLUDE(FindPackageHandleStandardArgs)
 FIND_PACKAGE_HANDLE_STANDARD_ARGS(X10 DEFAULT_MSG X10_LIBRARIES X10_INCLUDE_DIRS)
 MARK_AS_ADVANCED(X10_LIBRARIES X10_INCLUDE_DIRS)
-

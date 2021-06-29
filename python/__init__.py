@@ -22,16 +22,17 @@
 This is the GNU Radio X10 module. Place your Python package
 description here (python/__init__.py).
 '''
+from __future__ import unicode_literals
 
 # import swig generated symbols into the X10 namespace
 try:
-	# this might fail if the module is python-only
-	from X10_swig import *
+    # this might fail if the module is python-only
+    from .X10_swig import *
 except ImportError:
-	pass
+    pass
 
 # import any pure python here
-from message_generator import message_generator
-from x10_decoder import x10_decoder
-from msg_gen_fuzzer import msg_gen_fuzzer
+from .message_generator import message_generator
+from .msg_gen_fuzzer import msg_gen_fuzzer
+from .x10_decoder import x10_decoder
 #
