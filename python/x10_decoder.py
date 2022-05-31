@@ -35,6 +35,7 @@ class x10_decoder(gr.sync_block):
             out_sig=[])
             
         self.message_port_register_out(pmt.intern("out"))
+        self.message_port_register_out(pmt.intern("bytes"))
         self.record_chips = False
         self.chips = numpy.array([], dtype=numpy.float32)
         self.message_count = 0
@@ -109,6 +110,15 @@ class x10_decoder(gr.sync_block):
                             "Address Code: 0x" + str(address_code) + "\t\t" + \
                             "Data Code: 0x" + str(data_code) + "\nBits: " + str(bits)
                         self.message_port_pub(pmt.intern("out"), pmt.to_pmt(message_out))
+                        
+                        # Drop Excess Bits
+                        if len(bits)%8 != 0:
+                            bits = bits[:-(len(bits)%8)]
+                        
+                        # Print Byte to Output Port    
+                        data_hex = ('%0*X' % (2,int(bits,2))).zfill(int(len(bits)/4))
+                        #print(data_hex)
+                        self.message_port_pub(pmt.intern("bytes"), pmt.to_pmt(data_hex))                        
                     
                 # Reset
                 self.chips = numpy.array([], dtype=numpy.float32)
