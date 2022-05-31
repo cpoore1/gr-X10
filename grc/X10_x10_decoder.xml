@@ -14,5 +14,12 @@
   <source>
     <name>out</name>
     <type>message</type>
+    <optional>1</optional>
+  </source>
+  
+  <source>
+    <name>bytes</name>
+    <type>message</type>
+    <optional>1</optional>
   </source>
 </block>
