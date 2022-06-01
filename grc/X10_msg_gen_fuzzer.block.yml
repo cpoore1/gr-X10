@@ -35,6 +35,11 @@ parameters:
 
 
 inputs:
+- label: in
+  domain: stream
+  dtype: complex
+  vlen: 1
+  optional: 0
 - label: fuzzer_in
   domain: message
   dtype: message
