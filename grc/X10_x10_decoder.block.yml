@@ -2,7 +2,7 @@
 
 id: X10_x10_decoder
 label: x10_decoder
-category: X10
+category: '[X10]'
 
 inputs:
 -   domain: stream

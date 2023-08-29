@@ -2,7 +2,7 @@
 
 id: X10_msg_gen_fuzzer
 label: msg_gen_fuzzer
-category: X10
+category: '[X10]'
 
 parameters:
 -   id: sample_rate
